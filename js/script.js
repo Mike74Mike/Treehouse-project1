@@ -6,7 +6,7 @@
 * @name myArray
 * @description - This documents quotes and their sources
 */
-const myArray = [
+const quote = [
   {
     quote:"I'll be back",
     source: "Arnold Schwarzenegger",
@@ -45,40 +45,34 @@ year:1888
 /**@function getRandomNumber()
 * @description - Gives a random Array value
 */
-function getRandomNumber(){
-  let quote1 = Math.floor(Math.random() * myArray.length);
-  return quote1
+function getRandomQuote(){
+  let quote1 = Math.floor(Math.random() * quote.length);
+  return quote[quote1]
 }
 //End of Function
-/**@function getRandomQuote()
-* @description - Gives a random Quote
-*/
-function getRandomQuote(){
-  let i = getRandomNumber();
-  return myArray[i].quote;
-}
+
 /**
 * @function printQuote()
 * @description- This outputs HTML Text if the quote
 */
 function printQuote(){
-  const i = getRandomNumber();
+
   const quote = getRandomQuote();
   let html=''
-  if(myArray[i].citation){
+  if(quote.citation){
 
     html += document.querySelector('p').innerHTML =
-   `<p class="quote">${quote}</p>
-   <p class="source"> quote source
-     ${myArray[i].source}, <i><span class="citation">${myArray[i].citation}</span></i>,  <span class="year">${myArray[i].year}</span> [${myArray[i].tag}]
+   `<p class="quote">${quote.quote}</p>
+   <p class="source">
+     ${quote.source}, <i><span class="citation">${quote.citation}</span></i>,  <span class="year">${quote.year}</span> [${quote.tag}]
     </p>`;
   }else {
 
     html += document.querySelector('p').innerHTML =
- `<p class = "quote">${quote}</p>
+ `<p class = "quote">${quote.quote}</p>
  <p class="source">
 
-  ${myArray[i].source}, ${myArray[i].year} [${myArray[i].tag}]
+  ${quote.source}, ${quote.year} [${quote.tag}]
 
  </p> `;
 }
