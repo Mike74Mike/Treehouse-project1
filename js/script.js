@@ -6,7 +6,7 @@
 * @name myArray
 * @description - This documents quotes and their sources
 */
-const quote = [
+const quotes = [
   {
     quote:"I'll be back",
     source: "Arnold Schwarzenegger",
@@ -46,8 +46,8 @@ year:1888
 * @description - Gives a random Array value
 */
 function getRandomQuote(){
-  let quote1 = Math.floor(Math.random() * quote.length);
-  return quote[quote1]
+  let quote1 = Math.floor(Math.random() * quotes.length);
+  return quotes[quote1]
 }
 //End of Function
 
